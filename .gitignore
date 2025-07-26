@@ -1,0 +1,20 @@
+# Node.js
+node_modules/
+.env
+
+# Vite specific
+.vite/
+dist/       # Выходная директория сборки Vite (обычно внутри client/)
+client/dist/ # На всякий случай, если dist не в корне client/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+logs/
+
+# OS generated files
+.DS_Store
+.idea/
+.vscode/
+*.swp
