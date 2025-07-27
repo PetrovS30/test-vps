@@ -24,5 +24,5 @@ app.get('/api/fruit', (req, res) => {
 
 app.listen(PORT, () => {
   console.log(`Сервер Express запущен на http://localhost:${PORT}`);
-  console.log(`Проверьте его в браузере: http://localhost:${PORT}/api/data`);
+  console.log(`Проверьте его в браузере: http://localhost:${PORT}/api/fruit`);
 });
