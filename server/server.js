@@ -45,7 +45,7 @@ app.get('/api/vegetables', async (req, res) => {
   if (!dbConnection) {
     return res.status(500).json({ error: 'Соединение с базой данных не установлено.' });
   }
-  try {dmin.
+  try {
     const [rows] = await dbConnection.execute('SELECT * FROM vegetables');
     res.json(rows);
   } catch (error) {
