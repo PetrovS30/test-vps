@@ -17,7 +17,7 @@ async function connectToDatabase() {
     dbConnection = await mysql.createConnection({
       host: 'localhost',      // MySQL запущен на том же сервере
       user: 'Serg',           // Ваш пользователь MySQL
-      password: 'Pa$$w0rd_MySql2025!', // Ваш пароль для пользователя Serg
+      password: 'Pa$$w0rd_MySql2025!', // Ваш пароль для пользователя Serg PhpM@dm1n$Pass_2025
       database: 'test'        // Ваша база данных
     });
     console.log('✅ Успешно подключено к базе данных MySQL!');
@@ -59,3 +59,4 @@ app.listen(PORT, async () => {
   await connectToDatabase(); 
   console.log(`🚀 Сервер Express запущен на http://localhost:${PORT}`);
 });
+
