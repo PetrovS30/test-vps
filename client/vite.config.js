@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [react()],
   server: {
     proxy: {
-      '/api': 'http://localhost:5000', // Все запросы, начинающиеся с /api, будут перенаправлены на Express ,при deploy строку меняем
+      '/api': 'http://localhost:5000', // Все запросы, начинающиеся с /api, будут перенаправлены на Express ,только при разработке
     },
   },
 })

@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 function App() {
     const [fruit, setFruit] = useState(null);
     const [vegetables, setVegetables] = useState(null);
-
+    
     useEffect(()=> {
         const getFruit = async() => {
             try {
@@ -21,7 +21,6 @@ function App() {
         getFruit();
     }, []);
 
-    
     useEffect(()=> {
         const getVegetables = async() => {
             try {
@@ -58,7 +57,7 @@ function App() {
                     vegetables ? vegetables.map(item => {
                         return ( 
                             <ul key={item.id}> 
-                                <li>{item.fruit}</li>
+                                <li>{item.name}</li>
                             </ul>
                         );
                     }) : <span className='vegetables-container_dont'>We didn`t get vegetables form DataBase MySQL</span>

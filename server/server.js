@@ -3,7 +3,6 @@ const cors = require('cors');
 const mysql = require('mysql2/promise'); // <-- Добавляем импорт mysql2/promise
 
 const app = express();
-
 const PORT = process.env.PORT || 5000;
 
 app.use(cors());
@@ -32,7 +31,6 @@ async function connectToDatabase() {
 // --- КОНЕЦ: Логика подключения к MySQL ---
 
 
-// Ваш существующий эндпоинт для статических фруктов
 app.get('/api/fruit', (req, res) => {
   res.json([
     {id : 1, fruit: 'banana'},
@@ -42,15 +40,12 @@ app.get('/api/fruit', (req, res) => {
   ]);
 });
 
-// --- ДОБАВЛЕНО: Пример эндпоинта, который использует MySQL ---
 // Вы можете использовать этот эндпоинт для проверки подключения к БД.
-// Предполагается, что у вас есть таблица 'example_table' в базе 'test'.
 app.get('/api/vegetables', async (req, res) => {
   if (!dbConnection) {
     return res.status(500).json({ error: 'Соединение с базой данных не установлено.' });
   }
-  try {
-    // или изменить запрос на ту таблицу, которую вы создадите в phpMyAdmin.
+  try {dmin.
     const [rows] = await dbConnection.execute('SELECT * FROM vegetables');
     res.json(rows);
   } catch (error) {
@@ -58,13 +53,9 @@ app.get('/api/vegetables', async (req, res) => {
     res.status(500).json({ error: 'Не удалось получить данные из базы данных.' });
   }
 });
-// --- КОНЕЦ ДОБАВЛЕННОГО ЭНДПОИНТА ---
 
 
-// Запуск сервера Express
 app.listen(PORT, async () => { 
   await connectToDatabase(); 
   console.log(`🚀 Сервер Express запущен на http://localhost:${PORT}`);
-  console.log(`➡️ Проверьте статические данные: http://87.228.100.172/api/fruit`);
-  console.log(`➡️ Проверьте данные из БД (после создания таблицы): http://87.228.100.172/api/data-from-db`);
 });
